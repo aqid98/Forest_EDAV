@@ -1,1 +1,25 @@
 # Data transformation
+
+## Extraction
+
+The datasets that we have downloaded from their respective sites have a lot of columns, many of which are not needed for this project.
+
+```{r}
+Fao<- read.csv("./datasets/FAOSTAT_data_4-10-2021.csv")
+cat(colnames(Fao),sep="\n",append=FALSE)
+```
+||||||
+|----|----|----|----|----|----|----|
+ï..Domain.Code |Domain |Area.Code |Area |Element.Code |Element |Item.Code|
+chr |chr |int |chr |int |chr |int|
+
+||||||
+|----|----|----|----|----|----|----|
+Item |Year.Code |Year |Unit |Value |Flag |Flag.Description
+chr |int |int |chr |num |chr |chr|
+
+## Transformation
+
+
+
+## Loading

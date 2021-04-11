@@ -1,6 +1,9 @@
 introduction
 data-sources
 data-transformation
+extraction
+transformation
+loading
 missing-values
 results
 interactive-component

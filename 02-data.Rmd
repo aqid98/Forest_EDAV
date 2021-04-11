@@ -1,2 +1,14 @@
 # Data sources
 
+In this project we use the following two data sets.
+
+>1. Global Deforestation 1990-2021: \
+  Source: Food and Agriculture Organization (FAO) \
+  Link: http://www.fao.org/faostat/en/#data/GF \
+2. GDP Growth Rate:\
+  Source: The World Bank\
+  Link: https://data.worldbank.org/indicator/NY.GDP.MKTP.KD.ZG \
+
+Both these are open source datasets which can be taken in csv format. \ 
+Since we have to compare the effects of the two datasets we have decided the time line 1990-2019 since these are the years common to both datasets and easy to process.
+
