@@ -1,7 +1,12 @@
 # Data transformation
 
 ```{r}
-library(ggplot2)
+library("ggplot2")
+library("dplyr")
+library("DT")
+library("xtable")
+library("knitr")
+
 ```
 
 
@@ -28,11 +33,47 @@ chr |int |int |chr |num |chr |chr|
 
 ## Transformation
 
+On randomly plotting a scatter plot of forest area for the top countries by area. That is 
+> \ 
+1. Russia \
+2. Canada \
+3. China \
+4. US \
+5. Brazil \
+6. Australia \
+7. India \
+8. Argentina \
+9. Kazakhstan \
+10. Algeria \
 
+We get the following plots.
+
+
+```{r,null_prefix=TRUE}
+kable(Fao[Fao$Area=="Russian Federation",][,c("Area","Year","Value")])
+plot(Value ~ Year , data=Fao[Fao$Area=="Russian Federation",])
+kable(Fao[Fao$Area=="Canada",][,c("Area","Year","Value")])
+plot(Value ~ Year , data=Fao[Fao$Area=="Canada",])
+kable(Fao[Fao$Area=="China",][,c("Area","Year","Value")])
+plot(Value ~ Year , data=Fao[Fao$Area=="China",])
+kable(Fao[Fao$Area=="United States of America",][,c("Area","Year","Value")])
+plot(Value ~ Year , data=Fao[Fao$Area=="United States of America",])
+kable(Fao[Fao$Area=="Brazil",][,c("Area","Year","Value")])
+plot(Value ~ Year , data=Fao[Fao$Area=="Brazil",])
+kable(Fao[Fao$Area=="Australia",][,c("Area","Year","Value")])
+plot(Value ~ Year , data=Fao[Fao$Area=="Australia",])
+kable(Fao[Fao$Area=="India",][,c("Area","Year","Value")])
+plot(Value ~ Year , data=Fao[Fao$Area=="India",])
+kable(Fao[Fao$Area=="Argentina",][,c("Area","Year","Value")])
+plot(Value ~ Year , data=Fao[Fao$Area=="Argentina",])
+kable(Fao[Fao$Area=="Kazakhstan",][,c("Area","Year","Value")])
+plot(Value ~ Year , data=Fao[Fao$Area=="Kazakhstan",])
+kable(Fao[Fao$Area=="Algeria",][,c("Area","Year","Value")])
+plot(Value ~ Year , data=Fao[Fao$Area=="Algeria",])
+```
 
 ```{r}
-Fao[Fao$Area=="Brazil",]
-plot(Year ~ Value , data=Fao[Fao$Area=="Brazil",])
+
 ```
 
 
