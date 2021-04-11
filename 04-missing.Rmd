@@ -1,1 +1,30 @@
 # Missing values
+
+```{r,null_prefix=TRUE}
+
+library(dplyr, warn.conflicts = FALSE)
+Fao<- read.csv("./datasets/FAOSTAT_data_4-10-2021.csv")
+Fao<- Fao[,c("Area","Year","Value")]
+Fao<-rename(Fao, "Country" = "Area")
+```
+
+First lets check which of the three columns have missing values.
+
+```{r,null_prefix=TRUE}
+cat(sapply(Fao, function(x) sum(is.na(x))),sep="\n")
+```
+
+Thus the third column that is Value has 537 missing values.
+Now lets see which countries have these.
+
+```{r}
+missing <- Fao[is.na(Fao$Value),]
+cat(unlist(unique(missing[c("Country")])),fill = getOption("width"),sep=", ")
+```
+
+Now comes the historical context to these missing values.
+
+>1. Countries such as Armenia, Azerbaijan came into existence in 1991 so have data missing for 1991. \
+2. Similarly the Soviet Union broke into 15 sovereign states. All 15 of which are in the above list. \
+3. Other countries also follow the same logic. South Sudan came into existence in 2011. For the time being we shall delete these countries as they don't affect our comparisons much. \ 
+4. Even countries which broke into two separate countries have missing values. \

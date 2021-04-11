@@ -103,6 +103,33 @@
             <section class="normal" id="section-">
 <div id="missing-values" class="section level1" number="4">
 <h1><span class="header-section-number">Chapter 4</span> Missing values</h1>
+<p>First lets check which of the three columns have missing values.</p>
+<pre><code>## 0
+## 0
+## 537</code></pre>
+<p>Thus the third column that is Value has 537 missing values.
+Now lets see which countries have these.</p>
+<pre><code>## Armenia Azerbaijan Belarus Belgium Belgium-Luxembourg 
+## Bonaire, Sint Eustatius and Saba Bosnia and Herzegovina Channel Islands 
+## China, Hong Kong SAR China, Macao SAR China, Taiwan Province of Croatia 
+## CuraÃ§ao Czechia Czechoslovakia Eritrea Estonia Ethiopia Ethiopia PDR Georgia 
+## Kazakhstan Kyrgyzstan Latvia Lithuania Luxembourg Marshall Islands 
+## Micronesia (Federated States of) Montenegro North Macedonia 
+## Northern Mariana Islands Pacific Islands Trust Territory Palau 
+## Republic of Moldova Russian Federation Saint-Martin (French part) Serbia 
+## Serbia and Montenegro Sint Maarten (Dutch part) Slovakia Slovenia South Sudan 
+## Sudan Sudan (former) Tajikistan Turkmenistan Ukraine USSR Uzbekistan 
+## Yugoslav SFR</code></pre>
+<p>Now comes the historical context to these missing values.</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Countries such as Armenia, Azerbaijan came into existence in 1991 so have data missing for 1991.<br />
+</li>
+<li>Similarly the Soviet Union broke into 15 sovereign states. All 15 of which are in the above list.<br />
+</li>
+<li>Other countries also follow the same logic. South Sudan came into existence in 2011. For the time being we shall delete these countries as they don’t affect our comparisons much. </li>
+</ol>
+</blockquote>
 
 </div>
             </section>
