@@ -3,6 +3,9 @@
 ```{r,null_prefix=TRUE}
 
 library(dplyr, warn.conflicts = FALSE)
+library(ggplot2)
+library(tidyverse)
+library(knitr)
 Fao<- read.csv("./datasets/FAOSTAT_data_4-10-2021.csv")
 Fao<- Fao[,c("Area","Year","Value")]
 Fao<-rename(Fao, "Country" = "Area")
@@ -21,6 +24,12 @@ Now lets see which countries have these.
 missing <- Fao[is.na(Fao$Value),]
 cat(unlist(unique(missing[c("Country")])),fill = getOption("width"),sep=", ")
 ```
+
+```{r}
+missing
+ggplot(missing, aes(x=Country, fill = Value, group = Value)) 
+```
+
 
 Now comes the historical context to these missing values.
 
