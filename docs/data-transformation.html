@@ -168,20 +168,33 @@
 </div>
 <div id="transformation" class="section level2" number="3.2">
 <h2><span class="header-section-number">3.2</span> Transformation</h2>
-<p>On randomly plotting a scatter plot of forest area for the top countries by area. That is
-&gt;  
-1. Russia<br />
-2. Canada<br />
-3. China<br />
-4. US<br />
-5. Brazil<br />
-6. Australia<br />
-7. India<br />
-8. Argentina<br />
-9. Kazakhstan<br />
-10. Algeria<br />
-</p>
+<p>On randomly plotting a scatter plot of forest area for the top countries by area. That is</p>
+<blockquote>
+<ol style="list-style-type: decimal">
+<li>Russia<br />
+</li>
+<li>Canada<br />
+</li>
+<li>China<br />
+</li>
+<li>US<br />
+</li>
+<li>Brazil<br />
+</li>
+<li>Australia<br />
+</li>
+<li>India<br />
+</li>
+<li>Argentina<br />
+</li>
+<li>Kazakhstan<br />
+</li>
+<li>Algeria<br />
+</li>
+</ol>
+</blockquote>
 <p>We get the following plots.</p>
+<p>The Russian Federation came into existence in 1992 after the dissolution of the Soviet Union, hence the first few rows have no data. This will also be kept in mind during the data cleaning process. On observing the scatter plot we can see that Russia has the best afforestation rate. It is also one of the highest forested countries.</p>
 <table>
 <thead>
 <tr class="header">
@@ -375,6 +388,7 @@
 </tbody>
 </table>
 <p><img src="finalproj_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+<p>Canada has shown a significant decrease in the forest land in a very linear fashion.</p>
 <table>
 <thead>
 <tr class="header">
@@ -567,7 +581,8 @@
 </tr>
 </tbody>
 </table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-6-2.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-7-1.png" width="672" /></p>
+<p>Similar to Russia, China has also shown a healthy reforestation rate.</p>
 <table>
 <thead>
 <tr class="header">
@@ -760,7 +775,8 @@
 </tr>
 </tbody>
 </table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-6-3.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-8-1.png" width="672" /></p>
+<p>From 1990-2000 the United States of America shows a steady increase in the total forest area. Post 2000 to 2015 there is a huge rise. Follwing which the rate stabilises.</p>
 <table>
 <thead>
 <tr class="header">
@@ -953,7 +969,8 @@
 </tr>
 </tbody>
 </table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-6-4.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-9-1.png" width="672" /></p>
+<p>From 1990-2010 Brazil shows a steep deforestation rate which continues further till 2020.</p>
 <table>
 <thead>
 <tr class="header">
@@ -1146,7 +1163,8 @@
 </tr>
 </tbody>
 </table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-6-5.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-10-1.png" width="672" /></p>
+<p>Up-to 2010 Australia was a global deforestation center. Post 2010 Australia planted huge amounts of trees included on land cleared for mining. Thus Australia shows an increase in the total forest land.</p>
 <table>
 <thead>
 <tr class="header">
@@ -1339,7 +1357,8 @@
 </tr>
 </tbody>
 </table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-6-6.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-11-1.png" width="672" /></p>
+<p>Like China, India shows a healthy afforestation rate.</p>
 <table>
 <thead>
 <tr class="header">
@@ -1532,7 +1551,8 @@
 </tr>
 </tbody>
 </table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-6-7.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-12-1.png" width="672" /></p>
+<p>Argentina shows a heavy deforestation rate.</p>
 <table>
 <thead>
 <tr class="header">
@@ -1725,7 +1745,8 @@
 </tr>
 </tbody>
 </table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-6-8.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-13-1.png" width="672" /></p>
+<p>Kazakhstan shows a trend similar to Australia where in there is a reverse trend post 2010. Kazakhstan initiated artificial forestation from 2010.</p>
 <table>
 <thead>
 <tr class="header">
@@ -1918,7 +1939,8 @@
 </tr>
 </tbody>
 </table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-6-9.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-14-1.png" width="672" /></p>
+<p>Up-to 2000 Algeria had an alarming rate of loss of forest land. Post 2000 Algeria shows an increase in the total forest land. This happened due to the launch of National Reforestation Plan in 2000.</p>
 <table>
 <thead>
 <tr class="header">
@@ -2111,10 +2133,13 @@
 </tr>
 </tbody>
 </table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-6-10.png" width="672" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-15-1.png" width="672" /></p>
 </div>
 <div id="loading" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Loading</h2>
+<p>Since the json object in a D3 map requires Country ID in ISO-Alpha 3 scale. We shall load these values into our original data.</p>
+<p>Also in order to make sense of our data we shall add historical contexts to each operation that we perform and every anomaly that we obtain.</p>
+<p>These steps will be discussed in further chapters.</p>
 
 </div>
 </div>
