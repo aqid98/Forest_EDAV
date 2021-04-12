@@ -6,15 +6,15 @@ library(dplyr, warn.conflicts = FALSE)
 library(ggplot2)
 library(tidyverse)
 library(knitr)
-Fao<- read.csv("./datasets/FAOSTAT_data_4-10-2021.csv")
-Fao<- Fao[,c("Area","Year","Value")]
-Fao<-rename(Fao, "Country" = "Area")
+Fao1<- read.csv("./datasets/FAOSTAT_data_4-10-2021.csv")
+Fao1<- Fao1[,c("Area","Year","Value")]
+Fao1<-rename(Fao1, "Country" = "Area")
 ```
 
 First lets check which of the three columns have missing values.
 
 ```{r,null_prefix=TRUE}
-cat(sapply(Fao, function(x) sum(is.na(x))),sep="\n")
+cat(sapply(Fao1, function(x) sum(is.na(x))),sep="\n")
 ```
 
 Thus the third column that is Value has 537 missing values.
@@ -24,7 +24,7 @@ Thus the third column that is Value has 537 missing values.
 Now lets see which countries have these.
 
 ```{r}
-missing <- Fao[is.na(Fao$Value),]
+missing <- Fao1[is.na(Fao1$Value),]
 cat(unlist(unique(missing[c("Country")])),fill = getOption("width"),sep=", ")
 ```
 
@@ -50,12 +50,12 @@ p<-ggplot(wb1, aes(x = n, y = reorder(ï..Country,n))) +
     ylab("Country") +
     xlab("Number of Missing Values") 
 ggplotly(p)
+
+library(plotrix)
+piechart<-pie3D(wb1[1:5,]$n,labels=wb1[1:5,]$ï..Country,explode=0.1,main="Pie Chart of Some Countries with missing values ",col=c("brown","#ddaa00","pink","#dd00dd"),labelcex=1.1)
 ```
 
-```{r, fig.height=8,fig.width=5}
-library(plotrix)
-pie3D(wb1[1:5,]$n,labels=wb1[1:5,]$ï..Country,explode=0.1,main="Pie Chart of Some Countries with missing values ",  col=c("brown","#ddaa00","pink","#dd00dd"),labelcex=1.1)
-```
+
 
 
 ### Historical Context

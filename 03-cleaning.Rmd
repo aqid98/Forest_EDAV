@@ -56,9 +56,10 @@ df<-rename(df,"Country" = "Area")
 df<-df[df$Country == "Canada" |  df$Country == "India" | df$Country == "Brazil" |df$Country == "United States of America" |  df$Country == "China" | df$Country == "Algeria"| df$Country=="Kazakhstan" | df$Country=="Russian Federation"|  df$Country == "China" | df$Country == "Algeria"| df$Country == "Australia" | df$Country == "Argentina",]
 
 
-ggplot(df, aes(x = Year, y = Value)) + 
+PLT<-ggplot(df, aes(x = Year, y = Value)) + 
   geom_line(aes(color = Country), size = 2) +
   theme_economist()
+PLT
 ```
 
 The above graphs due to their large differences are difficult to infer hence we plot these individually.
