@@ -1,1 +1,196 @@
 # Results
+
+A simple glimpse of a small subset of data with the initial forest area as below gives the following bar graph.
+
+
+```{r,null_prefix=TRUE}
+library(dplyr, warn.conflicts = FALSE)
+library(ggplot2)
+library(tidyverse)
+library(knitr)
+library(hrbrthemes)
+library(plotly)
+load<- read.csv("./datasets/FAOSTAT_data_4-10-2021.csv")
+load<- load[,c("Area","Year","Value")]
+load<-rename(load, "Country" = "Area")
+load_1991<-load[load$Year==1991,]
+a<-load_1991[order(-load_1991$Value),][1:10,]
+pl<-ggplot(a, aes(x = Value, y = reorder(Country,Value))) +
+ geom_bar(stat="identity", fill="steelblue")+
+  theme_ipsum() +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.y = element_line(colour = "cornflowerblue", linetype = "dashed")
+  )+ ggtitle("Countries by max forest area (1991)")+
+    ylab("Country") +
+    xlab("Forest Land Hectare") 
+ggplotly(pl)
+```
+
+The above graph is difficult to compare so we use comparative line graphs to test our initial hypothesis. 
+
+```{r, fig.height=6,fig.width=8}
+library(ggthemes)
+
+GDP<-read.csv("./datasets/WorldBank_data.csv")
+Forest<-read.csv("./datasets/dataFAO_updated_result.csv")
+
+Forest<-rename(Forest, "Forest_Area" = "Production")
+
+GPD_BRICS<-GDP[GDP$ï..Country=='Brazil'| GDP$ï..Country=='Russian Federation'| GDP$ï..Country=='India' | GDP$ï..Country=='China'| GDP$ï..Country== 'South Africa',][,c("ï..Country","Year","GDP_Growth")]
+
+GPD_BRICS<-rename(GPD_BRICS, "Country" = "ï..Country")
+
+Forest_BRICS<-Forest[Forest$Country=='Brazil'| Forest$Country=='Russian Federation'| Forest$Country=='India' | Forest$Country=='China'| Forest$Country== 'South Africa',][,c("Country","Year","Forest_Area")]
+brics_merged<-merge(GPD_BRICS, Forest_BRICS, by.x=c("Country","Year"), by.y=c("Country","Year"))
+
+brics_gdp <- ggplot(brics_merged, aes(Year, GDP_Growth, col = Country)) +  
+  geom_line()+ theme_economist() +
+  labs(title = "GDP growth rate for BRICS Countries",
+       x = "Year",
+       y = "GDP Growth Rate (%)") 
+ggplotly(brics_gdp)
+
+  brics_forest <- ggplot(brics_merged, aes(Year, Forest_Area, col = Country)) + geom_line()+ theme_economist()  +
+  labs(title = "Forest Land Change Rate for BRICS Countries",
+       x = "Year",
+       y = "Forest Land Change Rate (%)") 
+ggplotly(brics_forest)
+
+```
+```{r, fig.height=6,fig.width=8}
+library(ggthemes)
+
+GDP<-read.csv("./datasets/WorldBank_data.csv")
+Forest<-read.csv("./datasets/dataFAO_updated_result.csv")
+
+Forest<-rename(Forest, "Forest_Area" = "Production")
+
+GPD_EU<-GDP[GDP$ï..Country=="Portugal"| GDP$ï..Country=='France'| GDP$ï..Country=='Germany' | GDP$ï..Country=='Italy'| GDP$ï..Country== 'Spain',][,c("ï..Country","Year","GDP_Growth")]
+
+GPD_EU<-rename(GPD_EU, "Country" = "ï..Country")
+
+
+Forest_EU<-Forest[Forest$Country=='Portugal'| Forest$Country=='France'| Forest$Country=='Germany' | Forest$Country=='Italy'| Forest$Country== 'Spain',][,c("Country","Year","Forest_Area")]
+
+
+EU_merged<-merge(GPD_EU, Forest_EU, by.x=c("Country","Year"), by.y=c("Country","Year"))
+
+EU_gdp <- ggplot(EU_merged, aes(Year, GDP_Growth, col = Country)) +  
+  geom_line()+ theme_economist() +
+  labs(title = "GDP for some European Countries",
+       x = "Year",
+       y = "GDP Growth Rate (%)") 
+ggplotly(EU_gdp)
+
+  EU_forest <- ggplot(EU_merged, aes(Year, Forest_Area, col = Country)) +  
+  geom_line()+ theme_economist() +
+  labs(title = "Forest Land Change Rate for some European Countries",
+       x = "Year",
+       y = "Forest Land Change Rate (%)") 
+ggplotly(EU_forest)
+
+```
+
+```{r, fig.height=6,fig.width=8}
+library(ggthemes)
+
+GDP<-read.csv("./datasets/WorldBank_data.csv")
+Forest<-read.csv("./datasets/dataFAO_updated_result.csv")
+
+Forest<-rename(Forest, "Forest_Area" = "Production")
+
+GPD_NA<-GDP[GDP$ï..Country=="Canada"| GDP$ï..Country=='Mexico'| GDP$ï..Country=='United States of America',][,c("ï..Country","Year","GDP_Growth")]
+
+GPD_NA<-rename(GPD_NA, "Country" = "ï..Country")
+
+
+Forest_NA<-Forest[Forest$Country=='Canada'| Forest$Country=='Mexico'| Forest$Country=='United States of America',][,c("Country","Year","Forest_Area")]
+
+
+NA_merged<-merge(GPD_NA, Forest_NA, by.x=c("Country","Year"), by.y=c("Country","Year"))
+
+NA_gdp <- ggplot(NA_merged, aes(Year, GDP_Growth, col = Country)) +  
+  geom_line()+ theme_economist()  +
+  labs(title = "GDP for North American Countries",
+       x = "Year",
+       y = "GDP Grwoth Rate (%)") 
+ggplotly(NA_gdp)
+
+  NA_forest <- ggplot(NA_merged, aes(Year, Forest_Area, col = Country)) +  
+  geom_line()+ theme_economist() +
+  labs(title = "Forest Land Change Rate for North American Countries",
+       x = "Year",
+       y = "Forest Land Change Rate (%)") 
+ggplotly(NA_forest)
+
+```
+```{r, fig.height=6,fig.width=8}
+library(ggthemes)
+
+GDP<-read.csv("./datasets/WorldBank_data.csv")
+Forest<-read.csv("./datasets/dataFAO_updated_result.csv")
+
+Forest<-rename(Forest, "Forest_Area" = "Production")
+
+GPD_SA<-GDP[GDP$ï..Country=="Argentina"| GDP$ï..Country=='Brazil'| GDP$ï..Country=='Uruguay'| GDP$ï..Country=='Bolivia'| GDP$ï..Country=='Peru'| GDP$ï..Country=='Colombia',][,c("ï..Country","Year","GDP_Growth")]
+
+GPD_SA<-rename(GPD_SA, "Country" = "ï..Country")
+
+
+Forest_SA<-Forest[Forest$Country=='Argentina'| Forest$Country=='Brazil'| Forest$Country=='Uruguay'| Forest$Country=='Bolivia'| Forest$Country=='Peru'|Forest$Country=='Colombia',][,c("Country","Year","Forest_Area")]
+
+
+SA_merged<-merge(GPD_SA, Forest_SA, by.x=c("Country","Year"), by.y=c("Country","Year"))
+
+SA_gdp <- ggplot(NA_merged, aes(Year, GDP_Growth, col = Country)) +  
+  geom_line()+ theme_economist()  +
+  labs(title = "GDP for South American Countries",
+       x = "Year",
+       y = "GDP Grwoth Rate (%)") 
+ggplotly(SA_gdp)
+
+  NA_forest <- ggplot(NA_merged, aes(Year, Forest_Area, col = Country)) +  
+  geom_line()+ theme_economist() +
+  labs(title = "Forest Land Change Rate for South American Countries",
+       x = "Year",
+       y = "Forest Land Change Rate (%)") 
+ggplotly(NA_forest)
+
+```
+```{r, fig.height=6,fig.width=8}
+library(ggthemes)
+
+GDP<-read.csv("./datasets/WorldBank_data.csv")
+Forest<-read.csv("./datasets/dataFAO_updated_result.csv")
+
+Forest<-rename(Forest, "Forest_Area" = "Production")
+
+GPD_Af<-GDP[GDP$ï..Country=="Algeria"| GDP$ï..Country=='Egypt'| GDP$ï..Country=='Morocco' | GDP$ï..Country=='Namibia'| GDP$ï..Country== 'South Africa',][,c("ï..Country","Year","GDP_Growth")]
+
+GPD_Af<-rename(GPD_Af, "Country" = "ï..Country")
+
+
+Forest_Af<-Forest[Forest$Country=='Algeria'| Forest$Country=='Egypt'| Forest$Country=='Morocco' | Forest$Country=='Namibia'| Forest$Country== 'South Africa',][,c("Country","Year","Forest_Area")]
+
+
+Af_merged<-merge(GPD_Af, Forest_Af, by.x=c("Country","Year"), by.y=c("Country","Year"))
+
+Af_gdp <- ggplot(Af_merged, aes(Year, GDP_Growth, col = Country)) +  
+  geom_line()+ theme_economist() +
+  labs(title = "GDP for some European Countries",
+       x = "Year",
+       y = "GDP Growth Rate (%)") 
+ggplotly(Af_gdp)
+
+  Af_forest <- ggplot(Af_merged, aes(Year, Forest_Area, col = Country)) +  
+  geom_line()+ theme_economist() +
+  labs(title = "Forest Land Change Rate for some European Countries",
+       x = "Year",
+       y = "Forest Land Change Rate (%)") 
+ggplotly(Af_forest)
+
+```
+
+

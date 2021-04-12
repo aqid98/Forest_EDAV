@@ -8,6 +8,8 @@ library("DT")
 library("xtable")
 library("knitr")
 library("ggthemes")
+library(readr)
+library(DT)
 
 ```
 
@@ -68,7 +70,7 @@ The Russian Federation came into existence in 1992 after the dissolution of the 
 
 
 ```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
-kable(Fao[Fao$Area=="Russian Federation",][3:6,c("Area","Year","Value")])
+datatable(head(Fao[Fao$Area=="Russian Federation",][,c("Area","Year","Value")],20),rownames = FALSE,options = list(scrollX = TRUE))
 ggplot(Fao[Fao$Area=="Russian Federation",],main="Russia", aes(x = Year, y = Value)) + 
   geom_line(aes(color = Area), size = 2) +
   theme_economist()
@@ -77,7 +79,7 @@ ggplot(Fao[Fao$Area=="Russian Federation",],main="Russia", aes(x = Year, y = Val
 Canada has shown a significant decrease in the forest land in a very linear fashion.
 
 ```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
-kable(Fao[Fao$Area=="Canada",][1:6,c("Area","Year","Value")])
+datatable(head(Fao[Fao$Area=="Canada",][,c("Area","Year","Value")],20),rownames = FALSE,options = list(scrollX = TRUE))
 ggplot(Fao[Fao$Area=="Canada",],main="Canada", aes(x = Year, y = Value)) + 
   geom_line(aes(color = Area), size = 2) +
   theme_economist()
@@ -86,7 +88,7 @@ ggplot(Fao[Fao$Area=="Canada",],main="Canada", aes(x = Year, y = Value)) +
 Similar to Russia, China has also shown a healthy reforestation rate.
 
 ```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
-kable(Fao[Fao$Area=="China",][1:6,c("Area","Year","Value")])
+datatable(head(Fao[Fao$Area=="China",][,c("Area","Year","Value")],20),rownames = FALSE,options = list(scrollX = TRUE))
 ggplot(Fao[Fao$Area=="China",],main="China", aes(x = Year, y = Value)) + 
   geom_line(aes(color = Area), size = 2) +
   theme_economist()
@@ -95,7 +97,7 @@ ggplot(Fao[Fao$Area=="China",],main="China", aes(x = Year, y = Value)) +
 From 1990-2000 the United States of America shows a steady increase in the total forest area. Post 2000 to 2015 there is a huge rise. Following which the rate stabilizes. 
 
 ```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
-kable(Fao[Fao$Area=="United States of America",][1:6,c("Area","Year","Value")])
+datatable(head(Fao[Fao$Area=="United States of America",][,c("Area","Year","Value")],20),rownames = FALSE,options = list(scrollX = TRUE))
 ggplot(Fao[Fao$Area=="United States of America",],main="United States of America", aes(x = Year, y = Value)) + 
   geom_line(aes(color = Area), size = 2) +
   theme_economist()
@@ -104,7 +106,7 @@ ggplot(Fao[Fao$Area=="United States of America",],main="United States of America
 From 1990-2010 Brazil shows a steep deforestation rate which continues further till 2020.
 
 ```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
-kable(Fao[Fao$Area=="Brazil",][1:6,c("Area","Year","Value")])
+datatable(head(Fao[Fao$Area=="Brazil",][,c("Area","Year","Value")],20),rownames = FALSE,options = list(scrollX = TRUE))
 ggplot(Fao[Fao$Area=="Brazil",],main="Brazil", aes(x = Year, y = Value)) + 
   geom_line(aes(color = Area), size = 2) +
   theme_economist()
@@ -113,7 +115,7 @@ ggplot(Fao[Fao$Area=="Brazil",],main="Brazil", aes(x = Year, y = Value)) +
 Up-to 2010 Australia was a global deforestation center. Post 2010 Australia planted huge amounts of trees included on land cleared for mining. Thus Australia shows an increase in the total forest land. 
 
 ```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
-kable(Fao[Fao$Area=="Australia",][1:6,c("Area","Year","Value")])
+datatable(head(Fao[Fao$Area=="Australia",][,c("Area","Year","Value")],20),rownames = FALSE,options = list(scrollX = TRUE))
 ggplot(Fao[Fao$Area=="Australia",],main="Australia", aes(x = Year, y = Value)) + 
   geom_line(aes(color = Area), size = 2) +
   theme_economist()
@@ -122,7 +124,7 @@ ggplot(Fao[Fao$Area=="Australia",],main="Australia", aes(x = Year, y = Value)) +
 Like China, India shows a healthy afforestation rate.
 
 ```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
-kable(Fao[Fao$Area=="India",][1:6,c("Area","Year","Value")])
+datatable(head(Fao[Fao$Area=="India",][,c("Area","Year","Value")],20),rownames = FALSE,options = list(scrollX = TRUE))
 ggplot(Fao[Fao$Area=="India",],main="India", aes(x = Year, y = Value)) + 
   geom_line(aes(color = Area), size = 2) +
   theme_economist()
@@ -131,7 +133,7 @@ ggplot(Fao[Fao$Area=="India",],main="India", aes(x = Year, y = Value)) +
 Argentina shows a heavy deforestation rate.
 
 ```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
-kable(Fao[Fao$Area=="Argentina",][1:6,c("Area","Year","Value")])
+datatable(head(Fao[Fao$Area=="Argentina",][,c("Area","Year","Value")],20),rownames = FALSE,options = list(scrollX = TRUE))
 ggplot(Fao[Fao$Area=="Argentina",],main="Argentina", aes(x = Year, y = Value)) + 
   geom_line(aes(color = Area), size = 2) +
   theme_economist()
@@ -140,7 +142,7 @@ ggplot(Fao[Fao$Area=="Argentina",],main="Argentina", aes(x = Year, y = Value)) +
 Kazakhstan shows a trend similar to Australia where in there is a reverse trend post 2010. Kazakhstan initiated artificial forestation from 2010.
 
 ```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
-kable(Fao[Fao$Area=="Kazakhstan",][1:6,c("Area","Year","Value")])
+datatable(head(Fao[Fao$Area=="Kazakhstan",][,c("Area","Year","Value")],20),rownames = FALSE,options = list(scrollX = TRUE))
 ggplot(Fao[Fao$Area=="Kazakhstan",],main="Kazakhstan", aes(x = Year, y = Value)) + 
   geom_line(aes(color = Area), size = 2) +
   theme_economist()
@@ -149,7 +151,7 @@ ggplot(Fao[Fao$Area=="Kazakhstan",],main="Kazakhstan", aes(x = Year, y = Value))
 Up-to 2000 Algeria had an alarming rate of loss of forest land. Post 2000 Algeria shows an increase in the total forest land. This happened due to the launch of National Reforestation Plan in 2000.
 
 ```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
-kable(Fao[Fao$Area=="Algeria",][1:6,c("Area","Year","Value")])
+datatable(head(Fao[Fao$Area=="Algeria",][,c("Area","Year","Value")],20),rownames = FALSE,options = list(scrollX = TRUE))
 ggplot(Fao[Fao$Area=="Algeria",],main="Algeria", aes(x = Year, y = Value)) + 
   geom_line(aes(color = Area), size = 2) +
   theme_economist()
@@ -168,7 +170,7 @@ These steps will be discussed in further chapters.
 
 ### Loading Columns
 
-For the forest area dataset we only need the country, year and value. Thus we only keep these Columns and discard the rest. We also renamed Area to Country which was not making any sense in the original data.
+For the forest area data set we only need the country, year and value. Thus we only keep these Columns and discard the rest. We also renamed Area to Country which was not making any sense in the original data.
 
 ```{r, null_prefix=TRUE}
 Fao<- read.csv("./datasets/FAOSTAT_data_4-10-2021.csv")

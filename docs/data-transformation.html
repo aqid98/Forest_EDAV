@@ -52,12 +52,13 @@
 
 
 <script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
+<link href="libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="libs/datatables-binding-0.17/datatables.js"></script>
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
 <link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
 <script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
 
 
 
@@ -214,496 +215,48 @@
 </ol>
 </blockquote>
 <p>On plotting the above 10 plots we get</p>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-95-1.png" width="1440" /></p>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-6-1.png" width="1440" /></p>
 <p>The above graphs due to their large differences are difficult to infer hence we plot these individually.</p>
 <p>The Russian Federation came into existence in 1992 after the dissolution of the Soviet Union, hence the first few rows have no data. This will also be kept in mind during the data cleaning process. On observing the scatter plot we can see that Russia has the best afforestation rate. It is also one of the highest forested countries.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Area</th>
-<th align="right">Year</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">5493</td>
-<td align="left">Russian Federation</td>
-<td align="right">1992</td>
-<td align="right">809013.6</td>
-</tr>
-<tr class="even">
-<td align="left">5494</td>
-<td align="left">Russian Federation</td>
-<td align="right">1993</td>
-<td align="right">809045.5</td>
-</tr>
-<tr class="odd">
-<td align="left">5495</td>
-<td align="left">Russian Federation</td>
-<td align="right">1994</td>
-<td align="right">809077.3</td>
-</tr>
-<tr class="even">
-<td align="left">5496</td>
-<td align="left">Russian Federation</td>
-<td align="right">1995</td>
-<td align="right">809109.2</td>
-</tr>
-</tbody>
-</table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-96-1.png" width="576" /></p>
+<div id="htmlwidget-b4dbcefc480b58697a3f" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b4dbcefc480b58697a3f">{"x":{"filter":"none","data":[["Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation","Russian Federation"],[1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009],[null,null,809013.62,809045.48,809077.34,809109.2,809141.06,809172.92,809204.78,809236.64,809268.5,809855.21,810441.92,811028.63,811615.34,812202.05,812788.76,813375.47,813962.18,814548.89]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Area<\/th>\n      <th>Year<\/th>\n      <th>Value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-7-2.png" width="576" /></p>
 <p>Canada has shown a significant decrease in the forest land in a very linear fashion.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Area</th>
-<th align="right">Year</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">1141</td>
-<td align="left">Canada</td>
-<td align="right">1990</td>
-<td align="right">348272.9</td>
-</tr>
-<tr class="even">
-<td align="left">1142</td>
-<td align="left">Canada</td>
-<td align="right">1991</td>
-<td align="right">348225.8</td>
-</tr>
-<tr class="odd">
-<td align="left">1143</td>
-<td align="left">Canada</td>
-<td align="right">1992</td>
-<td align="right">348178.7</td>
-</tr>
-<tr class="even">
-<td align="left">1144</td>
-<td align="left">Canada</td>
-<td align="right">1993</td>
-<td align="right">348131.6</td>
-</tr>
-<tr class="odd">
-<td align="left">1145</td>
-<td align="left">Canada</td>
-<td align="right">1994</td>
-<td align="right">348084.5</td>
-</tr>
-<tr class="even">
-<td align="left">1146</td>
-<td align="left">Canada</td>
-<td align="right">1995</td>
-<td align="right">348037.5</td>
-</tr>
-</tbody>
-</table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-97-1.png" width="576" /></p>
+<div id="htmlwidget-62b57326455986fd820a" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-62b57326455986fd820a">{"x":{"filter":"none","data":[["Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada","Canada"],[1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009],[348272.93,348225.834,348178.738,348131.642,348084.546,348037.45,347990.354,347943.258,347896.162,347849.066,347801.97,347753.994,347706.018,347658.042,347610.066,347562.09,347514.114,347466.138,347418.162,347370.186]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Area<\/th>\n      <th>Year<\/th>\n      <th>Value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-8-2.png" width="576" /></p>
 <p>Similar to Russia, China has also shown a healthy reforestation rate.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Area</th>
-<th align="right">Year</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">1321</td>
-<td align="left">China</td>
-<td align="right">1990</td>
-<td align="right">157140.6</td>
-</tr>
-<tr class="even">
-<td align="left">1322</td>
-<td align="left">China</td>
-<td align="right">1991</td>
-<td align="right">159126.6</td>
-</tr>
-<tr class="odd">
-<td align="left">1323</td>
-<td align="left">China</td>
-<td align="right">1992</td>
-<td align="right">161112.6</td>
-</tr>
-<tr class="even">
-<td align="left">1324</td>
-<td align="left">China</td>
-<td align="right">1993</td>
-<td align="right">163098.6</td>
-</tr>
-<tr class="odd">
-<td align="left">1325</td>
-<td align="left">China</td>
-<td align="right">1994</td>
-<td align="right">165084.6</td>
-</tr>
-<tr class="even">
-<td align="left">1326</td>
-<td align="left">China</td>
-<td align="right">1995</td>
-<td align="right">167070.6</td>
-</tr>
-</tbody>
-</table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-98-1.png" width="576" /></p>
+<div id="htmlwidget-c2204774f5cbc1595cf4" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c2204774f5cbc1595cf4">{"x":{"filter":"none","data":[["China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China","China"],[1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009],[157140.59,159126.586,161112.582,163098.578,165084.574,167070.57,169056.566,171042.562,173028.558,175014.554,177000.55,179361.533,181722.516,184083.499,186444.482,188805.465,191166.448,193527.431,195888.414,198249.397]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Area<\/th>\n      <th>Year<\/th>\n      <th>Value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-9-2.png" width="576" /></p>
 <p>From 1990-2000 the United States of America shows a steady increase in the total forest area. Post 2000 to 2015 there is a huge rise. Following which the rate stabilizes.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Area</th>
-<th align="right">Year</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">7021</td>
-<td align="left">United States of America</td>
-<td align="right">1990</td>
-<td align="right">302450.0</td>
-</tr>
-<tr class="even">
-<td align="left">7022</td>
-<td align="left">United States of America</td>
-<td align="right">1991</td>
-<td align="right">302558.6</td>
-</tr>
-<tr class="odd">
-<td align="left">7023</td>
-<td align="left">United States of America</td>
-<td align="right">1992</td>
-<td align="right">302667.2</td>
-</tr>
-<tr class="even">
-<td align="left">7024</td>
-<td align="left">United States of America</td>
-<td align="right">1993</td>
-<td align="right">302775.8</td>
-</tr>
-<tr class="odd">
-<td align="left">7025</td>
-<td align="left">United States of America</td>
-<td align="right">1994</td>
-<td align="right">302884.4</td>
-</tr>
-<tr class="even">
-<td align="left">7026</td>
-<td align="left">United States of America</td>
-<td align="right">1995</td>
-<td align="right">302993.0</td>
-</tr>
-</tbody>
-</table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-99-1.png" width="576" /></p>
+<div id="htmlwidget-4ec9a301a413c417c622" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-4ec9a301a413c417c622">{"x":{"filter":"none","data":[["United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America","United States of America"],[1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009],[302450,302558.6,302667.2,302775.8,302884.4,302993,303101.6,303210.2,303318.8,303427.4,303536,304054.4,304572.8,305091.2,305609.6,306128,306646.4,307164.8,307683.2,308201.6]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Area<\/th>\n      <th>Year<\/th>\n      <th>Value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-10-2.png" width="576" /></p>
 <p>From 1990-2010 Brazil shows a steep deforestation rate which continues further till 2020.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Area</th>
-<th align="right">Year</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">871</td>
-<td align="left">Brazil</td>
-<td align="right">1990</td>
-<td align="right">588898.0</td>
-</tr>
-<tr class="even">
-<td align="left">872</td>
-<td align="left">Brazil</td>
-<td align="right">1991</td>
-<td align="right">585117.1</td>
-</tr>
-<tr class="odd">
-<td align="left">873</td>
-<td align="left">Brazil</td>
-<td align="right">1992</td>
-<td align="right">581336.1</td>
-</tr>
-<tr class="even">
-<td align="left">874</td>
-<td align="left">Brazil</td>
-<td align="right">1993</td>
-<td align="right">577555.2</td>
-</tr>
-<tr class="odd">
-<td align="left">875</td>
-<td align="left">Brazil</td>
-<td align="right">1994</td>
-<td align="right">573774.2</td>
-</tr>
-<tr class="even">
-<td align="left">876</td>
-<td align="left">Brazil</td>
-<td align="right">1995</td>
-<td align="right">569993.3</td>
-</tr>
-</tbody>
-</table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-100-1.png" width="576" /></p>
+<div id="htmlwidget-cfa196d605bb2b540110" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cfa196d605bb2b540110">{"x":{"filter":"none","data":[["Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil","Brazil"],[1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009],[588898,585117.06,581336.12,577555.18,573774.24,569993.3,566212.36,562431.42,558650.48,554869.54,551088.6,547137.81,543187.02,539236.23,535285.44,531334.65,527383.86,523433.07,519482.28,515531.49]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Area<\/th>\n      <th>Year<\/th>\n      <th>Value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-11-2.png" width="576" /></p>
 <p>Up-to 2010 Australia was a global deforestation center. Post 2010 Australia planted huge amounts of trees included on land cleared for mining. Thus Australia shows an increase in the total forest land.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Area</th>
-<th align="right">Year</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">331</td>
-<td align="left">Australia</td>
-<td align="right">1990</td>
-<td align="right">133882.2</td>
-</tr>
-<tr class="even">
-<td align="left">332</td>
-<td align="left">Australia</td>
-<td align="right">1991</td>
-<td align="right">133675.4</td>
-</tr>
-<tr class="odd">
-<td align="left">333</td>
-<td align="left">Australia</td>
-<td align="right">1992</td>
-<td align="right">133468.6</td>
-</tr>
-<tr class="even">
-<td align="left">334</td>
-<td align="left">Australia</td>
-<td align="right">1993</td>
-<td align="right">133261.8</td>
-</tr>
-<tr class="odd">
-<td align="left">335</td>
-<td align="left">Australia</td>
-<td align="right">1994</td>
-<td align="right">133055.0</td>
-</tr>
-<tr class="even">
-<td align="left">336</td>
-<td align="left">Australia</td>
-<td align="right">1995</td>
-<td align="right">132848.1</td>
-</tr>
-</tbody>
-</table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-101-1.png" width="576" /></p>
+<div id="htmlwidget-ff6ca4edbfa6bfcaa01c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-ff6ca4edbfa6bfcaa01c">{"x":{"filter":"none","data":[["Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia","Australia"],[1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009],[133882.2,133675.39,133468.58,133261.77,133054.96,132848.15,132641.34,132434.53,132227.72,132020.91,131814.1,131587.3,131360.5,131133.7,130906.9,130680.1,130453.3,130226.5,129999.7,129772.9]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Area<\/th>\n      <th>Year<\/th>\n      <th>Value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-12-2.png" width="576" /></p>
 <p>Like China, India shows a healthy afforestation rate.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Area</th>
-<th align="right">Year</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">3091</td>
-<td align="left">India</td>
-<td align="right">1990</td>
-<td align="right">63938.0</td>
-</tr>
-<tr class="even">
-<td align="left">3092</td>
-<td align="left">India</td>
-<td align="right">1991</td>
-<td align="right">64303.3</td>
-</tr>
-<tr class="odd">
-<td align="left">3093</td>
-<td align="left">India</td>
-<td align="right">1992</td>
-<td align="right">64668.6</td>
-</tr>
-<tr class="even">
-<td align="left">3094</td>
-<td align="left">India</td>
-<td align="right">1993</td>
-<td align="right">65033.9</td>
-</tr>
-<tr class="odd">
-<td align="left">3095</td>
-<td align="left">India</td>
-<td align="right">1994</td>
-<td align="right">65399.2</td>
-</tr>
-<tr class="even">
-<td align="left">3096</td>
-<td align="left">India</td>
-<td align="right">1995</td>
-<td align="right">65764.5</td>
-</tr>
-</tbody>
-</table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-102-1.png" width="576" /></p>
+<div id="htmlwidget-2da5ed82f8b2f09f16af" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-2da5ed82f8b2f09f16af">{"x":{"filter":"none","data":[["India","India","India","India","India","India","India","India","India","India","India","India","India","India","India","India","India","India","India","India"],[1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009],[63938,64303.3,64668.6,65033.9,65399.2,65764.5,66129.8,66495.1,66860.4,67225.7,67591,67781.5,67972,68162.5,68353,68543.5,68734,68924.5,69115,69305.5]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Area<\/th>\n      <th>Year<\/th>\n      <th>Value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-13-2.png" width="576" /></p>
 <p>Argentina shows a heavy deforestation rate.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Area</th>
-<th align="right">Year</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">241</td>
-<td align="left">Argentina</td>
-<td align="right">1990</td>
-<td align="right">35204.0</td>
-</tr>
-<tr class="even">
-<td align="left">242</td>
-<td align="left">Argentina</td>
-<td align="right">1991</td>
-<td align="right">35021.4</td>
-</tr>
-<tr class="odd">
-<td align="left">243</td>
-<td align="left">Argentina</td>
-<td align="right">1992</td>
-<td align="right">34838.8</td>
-</tr>
-<tr class="even">
-<td align="left">244</td>
-<td align="left">Argentina</td>
-<td align="right">1993</td>
-<td align="right">34656.2</td>
-</tr>
-<tr class="odd">
-<td align="left">245</td>
-<td align="left">Argentina</td>
-<td align="right">1994</td>
-<td align="right">34473.6</td>
-</tr>
-<tr class="even">
-<td align="left">246</td>
-<td align="left">Argentina</td>
-<td align="right">1995</td>
-<td align="right">34291.0</td>
-</tr>
-</tbody>
-</table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-103-1.png" width="576" /></p>
+<div id="htmlwidget-6f9a33c8e5f32d05ca92" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-6f9a33c8e5f32d05ca92">{"x":{"filter":"none","data":[["Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina","Argentina"],[1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009],[35204,35021.4,34838.8,34656.2,34473.6,34291,34108.4,33925.8,33743.2,33560.6,33378,33061.6,32745.2,32428.8,32112.4,31796,31479.6,31163.2,30846.8,30530.4]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Area<\/th>\n      <th>Year<\/th>\n      <th>Value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-14-2.png" width="576" /></p>
 <p>Kazakhstan shows a trend similar to Australia where in there is a reverse trend post 2010. Kazakhstan initiated artificial forestation from 2010.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Area</th>
-<th align="right">Year</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">3451</td>
-<td align="left">Kazakhstan</td>
-<td align="right">1990</td>
-<td align="right">NA</td>
-</tr>
-<tr class="even">
-<td align="left">3452</td>
-<td align="left">Kazakhstan</td>
-<td align="right">1991</td>
-<td align="right">NA</td>
-</tr>
-<tr class="odd">
-<td align="left">3453</td>
-<td align="left">Kazakhstan</td>
-<td align="right">1992</td>
-<td align="right">3161.181</td>
-</tr>
-<tr class="even">
-<td align="left">3454</td>
-<td align="left">Kazakhstan</td>
-<td align="right">1993</td>
-<td align="right">3160.649</td>
-</tr>
-<tr class="odd">
-<td align="left">3455</td>
-<td align="left">Kazakhstan</td>
-<td align="right">1994</td>
-<td align="right">3160.117</td>
-</tr>
-<tr class="even">
-<td align="left">3456</td>
-<td align="left">Kazakhstan</td>
-<td align="right">1995</td>
-<td align="right">3159.585</td>
-</tr>
-</tbody>
-</table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-104-1.png" width="576" /></p>
+<div id="htmlwidget-c7378070a9a4c914950c" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-c7378070a9a4c914950c">{"x":{"filter":"none","data":[["Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan","Kazakhstan"],[1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009],[null,null,3161.181,3160.6491,3160.1172,3159.5853,3159.0534,3158.5215,3157.9896,3157.4577,3156.9258,3149.4512,3141.9765,3134.5019,3127.0273,3119.5527,3112.078,3104.6034,3097.1288,3089.6541]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Area<\/th>\n      <th>Year<\/th>\n      <th>Value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-15-2.png" width="576" /></p>
 <p>Up-to 2000 Algeria had an alarming rate of loss of forest land. Post 2000 Algeria shows an increase in the total forest land. This happened due to the launch of National Reforestation Plan in 2000.</p>
-<table>
-<thead>
-<tr class="header">
-<th align="left"></th>
-<th align="left">Area</th>
-<th align="right">Year</th>
-<th align="right">Value</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">61</td>
-<td align="left">Algeria</td>
-<td align="right">1990</td>
-<td align="right">1667.0</td>
-</tr>
-<tr class="even">
-<td align="left">62</td>
-<td align="left">Algeria</td>
-<td align="right">1991</td>
-<td align="right">1658.2</td>
-</tr>
-<tr class="odd">
-<td align="left">63</td>
-<td align="left">Algeria</td>
-<td align="right">1992</td>
-<td align="right">1649.4</td>
-</tr>
-<tr class="even">
-<td align="left">64</td>
-<td align="left">Algeria</td>
-<td align="right">1993</td>
-<td align="right">1640.6</td>
-</tr>
-<tr class="odd">
-<td align="left">65</td>
-<td align="left">Algeria</td>
-<td align="right">1994</td>
-<td align="right">1631.8</td>
-</tr>
-<tr class="even">
-<td align="left">66</td>
-<td align="left">Algeria</td>
-<td align="right">1995</td>
-<td align="right">1623.0</td>
-</tr>
-</tbody>
-</table>
-<p><img src="finalproj_files/figure-html/unnamed-chunk-105-1.png" width="576" /></p>
+<div id="htmlwidget-8a1f82abc443dd898208" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-8a1f82abc443dd898208">{"x":{"filter":"none","data":[["Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria","Algeria"],[1990,1991,1992,1993,1994,1995,1996,1997,1998,1999,2000,2001,2002,2003,2004,2005,2006,2007,2008,2009],[1667,1658.2,1649.4,1640.6,1631.8,1623,1614.2,1605.4,1596.6,1587.8,1579,1612.9,1646.8,1680.7,1714.6,1748.5,1782.4,1816.3,1850.2,1884.1]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th>Area<\/th>\n      <th>Year<\/th>\n      <th>Value<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"scrollX":true,"columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<p><img src="finalproj_files/figure-html/unnamed-chunk-16-2.png" width="576" /></p>
 </div>
 <div id="loading-cleaning" class="section level2" number="3.3">
 <h2><span class="header-section-number">3.3</span> Loading (Cleaning)</h2>
@@ -712,7 +265,7 @@
 <p>These steps will be discussed in further chapters.</p>
 <div id="loading-columns" class="section level3" number="3.3.1">
 <h3><span class="header-section-number">3.3.1</span> Loading Columns</h3>
-<p>For the forest area dataset we only need the country, year and value. Thus we only keep these Columns and discard the rest. We also renamed Area to Country which was not making any sense in the original data.</p>
+<p>For the forest area data set we only need the country, year and value. Thus we only keep these Columns and discard the rest. We also renamed Area to Country which was not making any sense in the original data.</p>
 </div>
 <div id="alpha-3-iso-coding" class="section level3" number="3.3.2">
 <h3><span class="header-section-number">3.3.2</span> Alpha-3 ISO Coding</h3>

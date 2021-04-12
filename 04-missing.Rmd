@@ -23,12 +23,12 @@ Thus the third column that is Value has 537 missing values.
 
 Now lets see which countries have these.
 
-```{r}
+```{r,null_prefix=TRUE}
 missing <- Fao1[is.na(Fao1$Value),]
 cat(unlist(unique(missing[c("Country")])),fill = getOption("width"),sep=", ")
 ```
 
-```{r, fig.height=15, fig.width=6}
+```{r, fig.height=15, fig.width=7}
 library(dplyr, warn.conflicts = FALSE)
 library(ggplot2)
 library(tidyverse)
@@ -46,7 +46,7 @@ p<-ggplot(wb1, aes(x = n, y = reorder(ï..Country,n))) +
     panel.grid.major.x = element_blank(),
     panel.grid.minor.x = element_blank(),
     panel.grid.major.y = element_line(colour = "cornflowerblue", linetype = "dashed")
-  )+
+  )+ ggtitle("Missing Value Plot")+
     ylab("Country") +
     xlab("Number of Missing Values") 
 ggplotly(p)
