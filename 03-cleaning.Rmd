@@ -21,7 +21,7 @@ Fao<- read.csv("./datasets/FAOSTAT_data_4-10-2021.csv")
 cat(colnames(Fao),sep="\n",append=FALSE)
 ```
 
-The columns for the Forest Land data look like this:
+The columns for the Forest Land dataset look like this:
 
 ||||||
 |----|----|----|----|----|----|----|
