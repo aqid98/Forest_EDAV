@@ -13,3 +13,7 @@ loading-columns
 alpha-3-iso-coding
 motivation
 questions-of-interest
+countries-with-missing-values
+historical-context
+ireegularities
+irregularities

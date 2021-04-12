@@ -18,6 +18,9 @@ cat(sapply(Fao, function(x) sum(is.na(x))),sep="\n")
 ```
 
 Thus the third column that is Value has 537 missing values.
+
+### Countries with missing values
+
 Now lets see which countries have these.
 
 ```{r}
@@ -25,15 +28,42 @@ missing <- Fao[is.na(Fao$Value),]
 cat(unlist(unique(missing[c("Country")])),fill = getOption("width"),sep=", ")
 ```
 
-```{r}
-missing
-ggplot(missing, aes(x=Country, fill = Value, group = Value)) 
+```{r, fig.height=15, fig.width=6}
+library(dplyr, warn.conflicts = FALSE)
+library(ggplot2)
+library(tidyverse)
+library(knitr)
+library(plotly)
+library(hrbrthemes)
+wb = read.csv('./datasets/World_Bank_Data.csv', header = TRUE)
+wb1 = wb[wb$Production == 0, ] 
+wb1 <- wb1 %>% count(ï..Country)
+
+p<-ggplot(wb1, aes(x = n, y = reorder(ï..Country,n))) +
+  geom_point(size = 3) +  # Use a larger dot
+  theme_ipsum() +
+  theme(
+    panel.grid.major.x = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.y = element_line(colour = "cornflowerblue", linetype = "dashed")
+  )+
+    ylab("Country") +
+    xlab("Number of Missing Values") 
+ggplotly(p)
 ```
 
+
+
+### Historical Context
 
 Now comes the historical context to these missing values.
 
 >1. Countries such as Armenia, Azerbaijan came into existence in 1991 so have data missing for 1991. \
 2. Similarly the Soviet Union broke into 15 sovereign states. All 15 of which are in the above list. \
 3. Other countries also follow the same logic. South Sudan came into existence in 2011. For the time being we shall delete these countries as they don't affect our comparisons much. \ 
-4. Even countries which broke into two separate countries have missing values. \
+4. Even countries which broke into two separate countries have missing values for one of them. \
+5. Countries which get annexed by other countries will also show an increase or decrease in overall forest land. For instance Israel keeps annexing some Palestine territory in the West Bank every 2 years or so or the Russian annexation of Crimea in 2014. \
+
+### Irregularities
+
+Countries such as Kuwait record their forest land area change every 5 years while other countries record it annually. This leads to a few missing values. In order to deal with these we take the most recent values for these years. This allows us to deal with the change in forest area efficiently. As change is 0 in such cases we can keep these countries aside and focus on those with a high rate of deforestation.
