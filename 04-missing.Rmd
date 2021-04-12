@@ -52,6 +52,10 @@ p<-ggplot(wb1, aes(x = n, y = reorder(ï..Country,n))) +
 ggplotly(p)
 ```
 
+```{r, fig.height=8,fig.width=6}
+library(plotrix)
+pie3D(wb1[1:5,]$n,labels=wb1[1:5,]$ï..Country,explode=0.1,main="Pie Chart of Some Countries with missing values ",  col=c("brown","#ddaa00","pink","#dd00dd"),labelcex=1.1)
+```
 
 
 ### Historical Context
