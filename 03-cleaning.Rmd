@@ -1,11 +1,13 @@
 # Data transformation
 
 ```{r}
+
 library("ggplot2")
 library("dplyr")
 library("DT")
 library("xtable")
 library("knitr")
+library("ggthemes")
 
 ```
 
@@ -46,83 +48,131 @@ On randomly plotting a scatter plot of forest area for the top countries by area
 9. Kazakhstan \
 10. Algeria \
 
-We get the following plots.
+On plotting the above 10 plots we get 
+
+```{r,null_prefix=TRUE, fig.height=15,fig.width=15}
+df<-Fao[,c("Area","Year","Value")]
+df<-rename(df,"Country" = "Area")
+df<-df[df$Country == "Canada" |  df$Country == "India" | df$Country == "Brazil" |df$Country == "United States of America" |  df$Country == "China" | df$Country == "Algeria"| df$Country=="Kazakhstan" | df$Country=="Russian Federation"|  df$Country == "China" | df$Country == "Algeria"| df$Country == "Australia" | df$Country == "Argentina",]
+
+
+ggplot(df, aes(x = Year, y = Value)) + 
+  geom_line(aes(color = Country), size = 2) +
+  theme_economist()
+```
+
+The above graphs due to their large differences are difficult to infer hence we plot these individually.
 
 The Russian Federation came into existence in 1992 after the dissolution of the Soviet Union, hence the first few rows have no data. This will also be kept in mind during the data cleaning process. On observing the scatter plot we can see that Russia has the best afforestation rate. It is also one of the highest forested countries.
 
-```{r,null_prefix=TRUE}
-kable(Fao[Fao$Area=="Russian Federation",][,c("Area","Year","Value")])
-plot(Value ~ Year , data=Fao[Fao$Area=="Russian Federation",],main="Russia")
+
+```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
+kable(Fao[Fao$Area=="Russian Federation",][3:6,c("Area","Year","Value")])
+ggplot(Fao[Fao$Area=="Russian Federation",],main="Russia", aes(x = Year, y = Value)) + 
+  geom_line(aes(color = Area), size = 2) +
+  theme_economist()
 ```
 
 Canada has shown a significant decrease in the forest land in a very linear fashion.
 
-```{r,null_prefix=TRUE}
-kable(Fao[Fao$Area=="Canada",][,c("Area","Year","Value")])
-plot(Value ~ Year , data=Fao[Fao$Area=="Canada",],main="Canada")
+```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
+kable(Fao[Fao$Area=="Canada",][1:6,c("Area","Year","Value")])
+ggplot(Fao[Fao$Area=="Canada",],main="Canada", aes(x = Year, y = Value)) + 
+  geom_line(aes(color = Area), size = 2) +
+  theme_economist()
 ```
 
 Similar to Russia, China has also shown a healthy reforestation rate.
 
-```{r,null_prefix=TRUE}
-kable(Fao[Fao$Area=="China",][,c("Area","Year","Value")])
-plot(Value ~ Year , data=Fao[Fao$Area=="China",],main="China")
+```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
+kable(Fao[Fao$Area=="China",][1:6,c("Area","Year","Value")])
+ggplot(Fao[Fao$Area=="China",],main="China", aes(x = Year, y = Value)) + 
+  geom_line(aes(color = Area), size = 2) +
+  theme_economist()
 ```
 
-From 1990-2000 the United States of America shows a steady increase in the total forest area. Post 2000 to 2015 there is a huge rise. Follwing which the rate stabilises. 
+From 1990-2000 the United States of America shows a steady increase in the total forest area. Post 2000 to 2015 there is a huge rise. Following which the rate stabilizes. 
 
-```{r,null_prefix=TRUE}
-kable(Fao[Fao$Area=="United States of America",][,c("Area","Year","Value")])
-plot(Value ~ Year , data=Fao[Fao$Area=="United States of America",],main="United States of America")
+```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
+kable(Fao[Fao$Area=="United States of America",][1:6,c("Area","Year","Value")])
+ggplot(Fao[Fao$Area=="United States of America",],main="United States of America", aes(x = Year, y = Value)) + 
+  geom_line(aes(color = Area), size = 2) +
+  theme_economist()
 ```
 
 From 1990-2010 Brazil shows a steep deforestation rate which continues further till 2020.
 
-```{r,null_prefix=TRUE}
-kable(Fao[Fao$Area=="Brazil",][,c("Area","Year","Value")])
-plot(Value ~ Year , data=Fao[Fao$Area=="Brazil",],main="Brazil")
+```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
+kable(Fao[Fao$Area=="Brazil",][1:6,c("Area","Year","Value")])
+ggplot(Fao[Fao$Area=="Brazil",],main="Brazil", aes(x = Year, y = Value)) + 
+  geom_line(aes(color = Area), size = 2) +
+  theme_economist()
 ```
 
 Up-to 2010 Australia was a global deforestation center. Post 2010 Australia planted huge amounts of trees included on land cleared for mining. Thus Australia shows an increase in the total forest land. 
 
-```{r,null_prefix=TRUE}
-kable(Fao[Fao$Area=="Australia",][,c("Area","Year","Value")])
-plot(Value ~ Year , data=Fao[Fao$Area=="Australia",],main="Australia")
+```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
+kable(Fao[Fao$Area=="Australia",][1:6,c("Area","Year","Value")])
+ggplot(Fao[Fao$Area=="Australia",],main="Australia", aes(x = Year, y = Value)) + 
+  geom_line(aes(color = Area), size = 2) +
+  theme_economist()
 ```
 
 Like China, India shows a healthy afforestation rate.
 
-```{r,null_prefix=TRUE}
-kable(Fao[Fao$Area=="India",][,c("Area","Year","Value")])
-plot(Value ~ Year , data=Fao[Fao$Area=="India",],main="India")
+```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
+kable(Fao[Fao$Area=="India",][1:6,c("Area","Year","Value")])
+ggplot(Fao[Fao$Area=="India",],main="India", aes(x = Year, y = Value)) + 
+  geom_line(aes(color = Area), size = 2) +
+  theme_economist()
 ```
 
 Argentina shows a heavy deforestation rate.
 
-```{r,null_prefix=TRUE}
-kable(Fao[Fao$Area=="Argentina",][,c("Area","Year","Value")])
-plot(Value ~ Year , data=Fao[Fao$Area=="Argentina",],main="Argentina")
+```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
+kable(Fao[Fao$Area=="Argentina",][1:6,c("Area","Year","Value")])
+ggplot(Fao[Fao$Area=="Argentina",],main="Argentina", aes(x = Year, y = Value)) + 
+  geom_line(aes(color = Area), size = 2) +
+  theme_economist()
 ```
 
 Kazakhstan shows a trend similar to Australia where in there is a reverse trend post 2010. Kazakhstan initiated artificial forestation from 2010.
 
-```{r,null_prefix=TRUE}
-kable(Fao[Fao$Area=="Kazakhstan",][,c("Area","Year","Value")])
-plot(Value ~ Year , data=Fao[Fao$Area=="Kazakhstan",],main="Kazakhstan")
+```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
+kable(Fao[Fao$Area=="Kazakhstan",][1:6,c("Area","Year","Value")])
+ggplot(Fao[Fao$Area=="Kazakhstan",],main="Kazakhstan", aes(x = Year, y = Value)) + 
+  geom_line(aes(color = Area), size = 2) +
+  theme_economist()
 ```
 
 Up-to 2000 Algeria had an alarming rate of loss of forest land. Post 2000 Algeria shows an increase in the total forest land. This happened due to the launch of National Reforestation Plan in 2000.
 
-```{r,null_prefix=TRUE}
-kable(Fao[Fao$Area=="Algeria",][,c("Area","Year","Value")])
-plot(Value ~ Year , data=Fao[Fao$Area=="Algeria",],main="Algeria")
+```{r,null_prefix=TRUE,fig.height=4,fig.width=6}
+kable(Fao[Fao$Area=="Algeria",][1:6,c("Area","Year","Value")])
+ggplot(Fao[Fao$Area=="Algeria",],main="Algeria", aes(x = Year, y = Value)) + 
+  geom_line(aes(color = Area), size = 2) +
+  theme_economist()
 ```
 
 
-## Loading
+
+
+## Loading (Cleaning)
 
 Since the json object in a D3 map requires Country ID in ISO-Alpha 3 scale. We shall load these values into our original data.
 
 Also in order to make sense of our data we shall add historical contexts to each operation that we perform and every anomaly that we obtain. 
 
 These steps will be discussed in further chapters.
+
+### Loading Columns
+
+For the forest area dataset we only need the country, year and value. Thus we only keep these Columns and discard the rest. We also renamed Area to Country which was not making any sense in the original data.
+
+```{r, null_prefix=TRUE}
+Fao<- read.csv("./datasets/FAOSTAT_data_4-10-2021.csv")
+Fao<- Fao[,c("Area","Year","Value")]
+Fao<- rename(Fao, "Country" = "Area")
+
+```
+
