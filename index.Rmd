@@ -13,6 +13,8 @@ Deforestation is an age old problem faced globally. There are a lot of factors w
 
 ### Questions of interest:
 
+In order to streamline our project with some use case we have decided to try and answer few of the following questions.
+
 1. Is the rate of deforestation actually alarming or are countries balancing it. (One country cuts n number of trees and at the same time
 some country plants n number of trees)?
 
