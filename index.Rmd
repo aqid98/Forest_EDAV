@@ -7,3 +7,16 @@ site: bookdown::bookdown_site
 
 # Introduction
 
+### Motivation:
+
+Deforestation is an age old problem faced globally. There are a lot of factors which cause deforestation such as mining, desertification, logging, forest fires etc. The aim behind this project to explore which countries are facing deforestation and which ones are facing afforestation and try to answer a few questions around them using data exploration and visualization. Deforestation leads to loss of biodiversity and extinction of a lot of species of plants and animals. Countries clear forests mostly for economic purpose. There is an intuition that more the forest land cleared for economic activities, better should be the economy of the country. Is this always true? 
+
+### Questions of interest:
+
+1. Is the rate of deforestation actually alarming or are countries balancing it. (One country cuts n number of trees and at the same time
+some country plants n number of trees)?
+
+2. It is long assumed that more industrialization leads to more deforestation. Can this be proved using the global deforestation dataset
+and GDP data sets?
+
+3. Do rich and poor countries imply more deforestation. Does recession affect deforestation?
