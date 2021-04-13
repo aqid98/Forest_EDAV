@@ -208,14 +208,14 @@ Af_merged<-merge(GPD_Af, Forest_Af, by.x=c("Country","Year"), by.y=c("Country","
 
 Af_gdp <- ggplot(Af_merged, aes(Year, GDP_Growth, col = Country)) +  
   geom_line()+ theme_economist() +
-  labs(title = "GDP for some European Countries",
+  labs(title = "GDP for some African Countries",
        x = "Year",
        y = "GDP Growth Rate (%)") 
 ggplotly(Af_gdp)
 
   Af_forest <- ggplot(Af_merged, aes(Year, Forest_Area, col = Country)) +  
   geom_line()+ theme_economist() +
-  labs(title = "Forest Land Change Rate for some European Countries",
+  labs(title = "Forest Land Change Rate for some Africann Countries",
        x = "Year",
        y = "Forest Land Change Rate (%)") 
 ggplotly(Af_forest)

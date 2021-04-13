@@ -1,6 +1,6 @@
 # Interactive component
 
-For the purpose of interactive component of our experiment
+For the purpose of interactive component of our project we use a guided tour visualization of map. There are two sections each having historical context to engage the user. The user can switch pages at its own pace.
 
 ![Screenshot](./images/screenshot_interactive.png)
 
