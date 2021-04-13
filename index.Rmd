@@ -20,5 +20,3 @@ some country plants n number of trees)?
 
 2. It is long assumed that more industrialization leads to more deforestation. Can this be proved using the global deforestation dataset
 and GDP data sets?
-
-3. Do rich and poor countries imply more deforestation. Does recession affect deforestation?
