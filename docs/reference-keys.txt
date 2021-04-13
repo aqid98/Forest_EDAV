@@ -15,3 +15,8 @@ irregularities
 results
 interactive-component
 conclusion
+brics
+european-union
+north-america
+south-america
+africa

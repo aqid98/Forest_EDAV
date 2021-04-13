@@ -30,6 +30,13 @@ ggplotly(pl)
 
 The above graph is difficult to compare so we use comparative line graphs to test our initial hypothesis. 
 
+### Brics
+
+The BRICS countries are among the fastest growing countries in the globe. India and China have managed to post high GDP growth numbers as well as increase in forest areas for a period of 30 years and counting which is a phenomenal feat given the poverty and population sizes of the 2 countries.
+
+Brazil has seen a huge loss in the Amazon forest cover which is often said to be a necessary step for economic growth. However, there is no visible impact on economic growth as countries with similar sizes and economies have shown better growth numbers while maintaining their ecological balance.
+
+
 ```{r, fig.height=6,fig.width=8}
 library(ggthemes)
 
@@ -59,6 +66,12 @@ ggplotly(brics_gdp)
 ggplotly(brics_forest)
 
 ```
+
+### European Union
+
+Most of the European countries have experienced stagnant economic growth in the last 30 years. Factors such as aging populations, availability of cheaper labour in Asia and high levels of unemployment have impeded economic growth in this region.
+This hasn’t prevented the European countries to maintain their forest covers.
+
 ```{r, fig.height=6,fig.width=8}
 library(ggthemes)
 
@@ -93,6 +106,10 @@ ggplotly(EU_forest)
 
 ```
 
+### North America
+
+The North American countries have experienced higher economic growth than their European counterparts despite the size of their economies. However, Mexico and Canada have seen a reduction of Forest Cover in the same time period mainly due to the extraction of various resources in newly found mines.
+
 ```{r, fig.height=6,fig.width=8}
 library(ggthemes)
 
@@ -126,6 +143,11 @@ ggplotly(NA_gdp)
 ggplotly(NA_forest)
 
 ```
+
+### South America
+
+
+
 ```{r, fig.height=6,fig.width=8}
 library(ggthemes)
 
@@ -144,14 +166,14 @@ Forest_SA<-Forest[Forest$Country=='Argentina'| Forest$Country=='Brazil'| Forest$
 
 SA_merged<-merge(GPD_SA, Forest_SA, by.x=c("Country","Year"), by.y=c("Country","Year"))
 
-SA_gdp <- ggplot(NA_merged, aes(Year, GDP_Growth, col = Country)) +  
+SA_gdp <- ggplot(SA_merged, aes(Year, GDP_Growth, col = Country)) +  
   geom_line()+ theme_economist()  +
   labs(title = "GDP for South American Countries",
        x = "Year",
        y = "GDP Grwoth Rate (%)") 
 ggplotly(SA_gdp)
 
-  NA_forest <- ggplot(NA_merged, aes(Year, Forest_Area, col = Country)) +  
+  NA_forest <- ggplot(SA_merged, aes(Year, Forest_Area, col = Country)) +  
   geom_line()+ theme_economist() +
   labs(title = "Forest Land Change Rate for South American Countries",
        x = "Year",
@@ -159,6 +181,13 @@ ggplotly(SA_gdp)
 ggplotly(NA_forest)
 
 ```
+
+
+### Africa
+
+Like the Asian countries, the African continent has experienced rapid growth in the economies of its countries. Political instability has been one of the reasons due to which some African countries have not been able to sustain economic growth as well as their Asian counterparts.
+There has been a stable decrease in the Forest Cover in the African continent over the last 30 years. A prime example of this trend is the country of Egypt which has seen a rapid decline in its green cover since 2010. However, there is no conclusive evidence from the graphs that this deforestation has led to an economic growth in the country.
+
 ```{r, fig.height=6,fig.width=8}
 library(ggthemes)
 
