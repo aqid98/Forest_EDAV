@@ -146,7 +146,8 @@ ggplotly(NA_forest)
 
 ### South America
 
-
+The economies of the South American countries highlighted above have been more or less in tandem with each other due to similar policies, populations and natural resources. 
+Apart from Uruguay, most of these countries have seen a steady decline in green cover.
 
 ```{r, fig.height=6,fig.width=8}
 library(ggthemes)
