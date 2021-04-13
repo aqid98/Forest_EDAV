@@ -1,6 +1,6 @@
 --- 
 title: "Forest"
-author: "Mohammed Aqid Khatkhatay (mk4427) and Sanket Gokhale(sg3904)"
+author: "Mohammed Aqid Khatkhatay (mk4427) and Sanket Sunil Gokhale(sg3904)"
 date: "`r Sys.Date()`"
 site: bookdown::bookdown_site
 ---
