@@ -1,4 +1,7 @@
 # Interactive component
 
+For the purpose of interactive component of our experiment
 
-Our visualiazation
+![Screenshot](./images/screenshot_interactive.png)
+
+The link to the visualization is https://sanketg97.github.io/EDAV_D3/
